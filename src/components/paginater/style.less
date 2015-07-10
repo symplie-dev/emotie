@@ -1,0 +1,63 @@
+.paginater {
+    width: 300px;
+}
+
+.paginater-ctrls {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    height: 28px;
+    width: 100%;
+}
+
+.paginater-ctrls-btns {
+    display: inline-block;
+    height: 14px;
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.paginater-btn-wrapper {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.paginater-ctrls-btn {
+    background: #111;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    transition: background 0.2s linear;
+    width: 8px;
+}
+
+.paginater-ctrls-btn.active {
+    background: #fff;
+    border: 2px solid @blue;
+}
+
+.pages-wrapper {
+    overflow: hidden;
+    width: 300px;
+}
+
+.pages {
+    position: relative;
+    transition: left 0.3s ease-in-out;
+}
+
+.pages:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.page {
+    float: left;
+    width: 300px;
+}
