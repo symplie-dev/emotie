@@ -6,63 +6,56 @@ var React          = require('react'),
     Paginater;
 
 Paginater = React.createClass({
-    propTypes: {
-        items: React.PropTypes.array
-    },
-    
-    getDefaultProps: function () {
-        return {
-            items: []
-        };
-    },
-    
-    getInitialState: function () {
-        return {
-            resultsPerPage: PaginaterStore.getResultsPerPage(),
-            pageIndex: PaginaterStore.getPageIndex()
-        };
-    },
-    
-    componentDidMount: function () {
-        PaginaterStore.addChangeListener(this.handlePaginaterChange);
-    },
+  
+  getInitialState: function () {
+    return {
+      resultsPerPage: PaginaterStore.getResultsPerPage(),
+      pageIndex: PaginaterStore.getPageIndex(),
+      emoticons: PaginaterStore.getEmoticons()
+    };
+  },
+  
+  componentDidMount: function () {
+    PaginaterStore.addChangeListener(this.handlePaginaterChange);
+  },
 
-    componentWillUnmount: function () {
-        PaginaterStore.removeChangeListener(this.handlePaginaterChange);
-    },
+  componentWillUnmount: function () {
+    PaginaterStore.removeChangeListener(this.handlePaginaterChange);
+  },
+  
+  handlePaginaterChange: function () {
+    this.setState({
+      resultsPerPage: PaginaterStore.getResultsPerPage(),
+      pageIndex: PaginaterStore.getPageIndex(),
+      emoticons: PaginaterStore.getEmoticons()
+    });
+  },
+  
+  render: function() {
+    var numPages = Math.ceil(this.state.emoticons.length / this.state.resultsPerPage),
+        pages    = [],
+        style    = {},
+        i;
     
-    handlePaginaterChange: function () {
-        this.setState({
-            resultsPerPage: PaginaterStore.getResultsPerPage(),
-            pageIndex: PaginaterStore.getPageIndex()
-        });
-    },
+    style.width = (numPages * 300) + 'px';
+    style.left = (-this.state.pageIndex * 300) + 'px';
     
-    render: function() {
-        var numPages = Math.ceil(this.props.items.length / this.state.resultsPerPage),
-            pages    = [],
-            style    = {},
-            i;
-        
-        style.width = (numPages * 300) + 'px';
-        style.left = (-this.state.pageIndex * 300) + 'px';
-        
-        for (i = 0; i < this.props.items.length; ) {
-            pages.push(<Page items={this.props.items.slice(i, i + this.state.resultsPerPage)} key={i} />);
-            i += this.state.resultsPerPage;
-        }
-        
-        return (
-            <div className='paginater'>
-                <div className='pages-wrapper'>
-                    <div className='pages' style={style}>
-                        {pages}
-                    </div>
-                </div>
-                <PaginaterCtrls numPages={numPages} pageIndex={this.state.pageIndex} />
-            </div>
-        );
+    for (i = 0; i < this.state.emoticons.length; ) {
+      pages.push(<Page items={this.state.emoticons.slice(i, i + this.state.resultsPerPage)} key={i} />);
+      i += this.state.resultsPerPage;
     }
+    
+    return (
+      <div className='paginater'>
+        <div className='pages-wrapper'>
+          <div className='pages' style={style}>
+            {pages}
+          </div>
+        </div>
+        <PaginaterCtrls numPages={numPages} pageIndex={this.state.pageIndex} />
+      </div>
+    );
+  }
 });
 
 module.exports = Paginater;

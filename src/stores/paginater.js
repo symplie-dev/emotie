@@ -4,8 +4,10 @@ var assign             = require('object-assign'),
     EventEmitter       = require('events').EventEmitter,
     Dispatcher         = require('../dispatcher'),
     PaginaterConstants = require('../constants/paginater'),
+    Dao                = require('../database'),
     _resultsPerPage    = 10,
     _pageIndex         = 0,
+    _emoticons         = [],
     PaginaterStore;
 
 PaginaterStore = assign({}, EventEmitter.prototype, {
@@ -27,6 +29,10 @@ PaginaterStore = assign({}, EventEmitter.prototype, {
   
   getResultsPerPage: function () {
     return _resultsPerPage;
+  },
+  
+  getEmoticons: function () {
+    return _emoticons;
   }
 });
 
@@ -44,6 +50,14 @@ PaginaterStore.dispatchToken = Dispatcher.register(function(action) {
       // no-op
       break;
   }
+});
+
+// Initialize the store from the emoticons in the Chrome sync storage
+Dao.init().then(function () {
+  return Dao.getEmoticons();
+}).then(function (emoticons) {
+  _emoticons = emoticons;
+  PaginaterStore.emitChange();
 });
 
 module.exports = PaginaterStore;
