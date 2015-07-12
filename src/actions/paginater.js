@@ -11,10 +11,10 @@ PaginaterActions = {
       pageIndex: pageIndex
     });
   },
-  setResultsPerPage: function (resultsPerPage) {
+  
+  resetEmoticons: function () {
     Dispatcher.dispatch({
-      type: PaginaterConstants.ActionTypes.SET_RESULTS_PER_PAGE,
-      resultsPerPage: resultsPerPage
+      type: PaginaterConstants.ActionTypes.RESET_EMOTICONS
     });
   }
 };

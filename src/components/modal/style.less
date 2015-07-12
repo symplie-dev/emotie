@@ -1,0 +1,252 @@
+.modal-outer {
+  background: rgba(0,0,0,0.6);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  
+  .modal-middle {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+    
+    .modal {
+      background: #fff;
+      border-radius: 4px;
+      color: #111;
+      display: inline-block;
+      font-size: 18px;
+      margin: 0 10px;
+      min-height: 60px;
+      position: relative;
+      width: 280px;
+      
+      h1 {
+        border-bottom: 1px solid #ddd;
+        color: #111;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        padding: 10px 0 10px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.modal-outer.show {
+  animation-name: fadeInModal;
+  animation-duration: 0.1s;
+  animation-fill-mode: both;
+  display: table;
+}
+
+.modal-outer.hide {
+  animation-name: fadeOutModal;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+.modal-outer.animating { display: table; }
+
+
+.modal.show {
+  animation-name: fadeInDown;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.modal.hide {
+  animation-name: fadeOutUp;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutModal {
+  0% {
+    opacity: 1.0;
+  }
+  
+  80% {
+    opacity: 1.0;
+  }
+  
+  100% {
+    opacity: 0.0;
+  }
+}
+
+@keyframes fadeInModal {
+  0% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0.2;
+    transform: translate3d(0, -200%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translate3d(0, -200%, 0);
+  }
+}
+
+.modal-ctrls {
+  border-top: 1px solid #ddd;
+  margin: 0;
+  padding: 10px 5px;
+  
+  .modal-ctrls-btn {
+    background: none;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 6px;
+    width: 50%;
+    
+    &:active, &:focus { outline: none; }
+  }
+  
+  .modal-ctrls-btn.link-btn {
+    color: #111;
+    
+    &:hover { text-decoration: underline; }
+  }
+  
+  .modal-ctrls-btn.solid-btn {
+    border: 2px solid @blue;
+    border-radius: 4px;
+    background: @blue;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    
+    &:hover { box-shadow: 0 0 6px rgba(0,0,0,0.4); }
+  }
+}
+
+.modal-body {
+  font-family: Helvetica, Arial, sans-serif;
+  
+  .modal-body-row {
+    border-bottom: 1px solid #ddd;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 2.5px 5px;
+    
+    &:last-child { border: none; padding-bottom: 15px; }
+  }
+  
+  .modal-body-row:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  
+  .modal-body-lbl {
+    color: #111;
+    float: left;
+    font-size: 14px;
+  }
+  
+  .modal-body-val {
+    color: #333;
+    float: right;
+    font-size: 14px;
+    
+    input {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      outline: none;
+      transition: border 0.2s linear;
+      
+      &:active, &:focus {
+        border-bottom: 2px solid @blue;
+      }
+    }
+  }
+  
+  .warning-lbl {
+    color: @red;
+    font-size: 11px;
+    line-height: 11px;
+  }
+  
+  .warning-input {
+    border: 1px solid @red;
+    border-radius: 4px;
+    color: @red;
+    outline: none;
+    padding: 6px 5px;
+    width: 180px;
+    
+    &:active, &:focus {
+      border: 2px solid @red;
+      outline: none;
+      padding: 5px 4px;
+    }
+  }
+  
+  .reset-btn {
+    background: @red;
+    border: 1px solid @red;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
+    outline: none;
+    padding: 6px 5px;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    width: 73px;
+    
+    &:active, &:focus { outline: none; }
+    &:hover { box-shadow: 0 0 6px rgba(0,0,0,0.4); }
+  }
+}
+
+@keyframes shakeReset {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.settings-modal.shake-reset {
+  animation-name: shakeReset;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}

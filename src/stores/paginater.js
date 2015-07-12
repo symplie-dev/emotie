@@ -2,13 +2,24 @@
 
 var assign             = require('object-assign'),
     EventEmitter       = require('events').EventEmitter,
+    Q                  = require('q'),
     Dispatcher         = require('../dispatcher'),
     PaginaterConstants = require('../constants/paginater'),
     Dao                = require('../database'),
-    _resultsPerPage    = 10,
     _pageIndex         = 0,
     _emoticons         = [],
     PaginaterStore;
+
+function _resetEmoticons() {
+  var deferred = Q.defer();
+  
+  Dao.resetEmoticons().then(function (emoticons) {
+    _emoticons = emoticons;
+    deferred.resolve();
+  });
+  
+  return deferred.promise;
+}
 
 PaginaterStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
@@ -27,10 +38,6 @@ PaginaterStore = assign({}, EventEmitter.prototype, {
     return _pageIndex;
   },
   
-  getResultsPerPage: function () {
-    return _resultsPerPage;
-  },
-  
   getEmoticons: function () {
     return _emoticons;
   }
@@ -42,9 +49,11 @@ PaginaterStore.dispatchToken = Dispatcher.register(function(action) {
       _pageIndex = action.pageIndex;
       PaginaterStore.emitChange();
       break;
-    case PaginaterConstants.ActionTypes.SET_RESULTS_PER_PAGE:
-      _resultsPerPage = action.resultsPerPage;
-      PaginaterStore.emitChange();
+    case PaginaterConstants.ActionTypes.RESET_EMOTICONS:
+      console.log('resetting')
+      _resetEmoticons().then(function () {
+        PaginaterStore.emitChange();
+      });
       break;
     default:
       // no-op

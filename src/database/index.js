@@ -28,8 +28,18 @@ EmotieDao = {
     { name: 'Oh Well', text: '¯\\_(ツ)_/¯' },
     { name: 'Sniper', text: '▄︻̷̿┻̿═━一' },
     { name: 'Group Lenny', text: '( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)' },
-    { name: 'Glasses', text: '(▀̿Ĺ̯▀̿ ̿)' },
-    { name: 'Over Here', text: '༼ つ ◕_◕ ༽つ' }
+    { name: 'Deal With It', text: '(▀̿Ĺ̯▀̿ ̿)' },
+    { name: 'Over Here', text: '༼ つ ◕_◕ ༽つ' },
+    { name: 'Disapproval', text: 'ಠ_ಠ' },
+    { name: 'Table Flip', text: '(╯°□°）╯︵ ┻━┻' },
+    { name: 'Respect Tables', text: '┬──┬ ノ( ゜-゜ノ)' },
+    { name: 'Aaay', text: '(☞ﾟヮﾟ)☞' },
+    { name: 'Cannot Unsee', text: '(ಥ_ಥ)' },
+    { name: 'Really', text: '☉_☉' },
+    { name: 'Strong Disapproval', text: 'ಠ╭╮ಠ' },
+    { name: 'Monkey', text: '﴾͡๏̯͡๏﴿' },
+    { name: 'Bear', text: 'ʕ•ᴥ•ʔ' },
+    { name: 'Come At Me Bro', text: '(ง ͠° ͟ل͜ ͡°)ง' }
   ],
   
   defaultSettings: {
@@ -58,6 +68,7 @@ EmotieDao = {
     
     chrome.storage.local.get('settings', function (data) {
       if (!data.settings) {
+        console.log('reset settings');
         settingsPromise = self.resetSettings();
       }
     });
@@ -182,11 +193,67 @@ EmotieDao = {
     var deferred = Q.defer(),
         self     = this;
     
-    chrome.storage.local.set( { 'settings': self.defaultSettings }, function () {
+    chrome.storage.local.set({ 'settings': self.defaultSettings }, function () {
       deferred.resolve(self.defaultSettings);
     });
     
     return deferred.promise;
+  },
+  
+  /**
+   * Get all settings.
+   * 
+   * @return {Promise<Settings>} The settings object
+   */
+  getSettings: function () {
+    var deferred = Q.defer();
+    
+    chrome.storage.local.get('settings', function (data) {
+      console.log('get settings:')
+      console.log(data.settings);
+      deferred.resolve(data.settings);
+    });
+    
+    return deferred.promise;
+  },
+  
+  /**
+   * Set the settings to the given settings object
+   * 
+   * @param  {Settings} settings The new settings object
+   * @return {Promise<Settings>} The default settings 
+   */
+  setSettings: function (settings) {
+    var deferred = Q.defer(),
+        self     = this;
+    
+    console.log('really setting')
+    console.log(settings);
+    
+    chrome.storage.local.set({ 'settings': settings }, function () {
+      deferred.resolve(settings);
+    });
+    
+    return deferred.promise;
+  },
+  
+  /**
+   * Get the number bytes used by the emoticons.
+   * 
+   * @return {Promise<number>} The number of bytes in use
+   */
+  getSyncBytesInUse: function () {
+    var deferred = Q.defer();
+    
+    chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
+      deferred.resolve(bytesInUse);
+    });
+    
+    return deferred.promise;
+  },
+  
+  getSyncQuota: function () {
+    return chrome.storage.sync.QUOTA_BYTES;
   }
 };
 

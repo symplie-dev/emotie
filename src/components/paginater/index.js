@@ -1,6 +1,7 @@
 
 var React          = require('react'),
     PaginaterStore = require('../../stores/paginater'),
+    ModalStore     = require('../../stores/modal'),
     Page           = require('./page'),
     PaginaterCtrls = require('./paginater-ctrls'),
     Paginater;
@@ -9,7 +10,7 @@ Paginater = React.createClass({
   
   getInitialState: function () {
     return {
-      resultsPerPage: PaginaterStore.getResultsPerPage(),
+      resultsPerPage: ModalStore.getSettings().resultsPerPage,
       pageIndex: PaginaterStore.getPageIndex(),
       emoticons: PaginaterStore.getEmoticons()
     };
@@ -17,17 +18,24 @@ Paginater = React.createClass({
   
   componentDidMount: function () {
     PaginaterStore.addChangeListener(this.handlePaginaterChange);
+    ModalStore.addChangeListener(this.handleModalChange);
   },
 
   componentWillUnmount: function () {
     PaginaterStore.removeChangeListener(this.handlePaginaterChange);
+    ModalStore.removeChangeListener(this.handleModalChange);
   },
   
   handlePaginaterChange: function () {
     this.setState({
-      resultsPerPage: PaginaterStore.getResultsPerPage(),
       pageIndex: PaginaterStore.getPageIndex(),
       emoticons: PaginaterStore.getEmoticons()
+    });
+  },
+  
+  handleModalChange: function () {
+    this.setState({
+      resultsPerPage: ModalStore.getSettings().resultsPerPage,
     });
   },
   

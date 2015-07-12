@@ -4,7 +4,7 @@ var PaginaterConstants = {
 
   ActionTypes: {
     GO_TO_PAGE: 'GO_TO_PAGE',
-    SET_RESULTS_PER_PAGE: 'SET_RESULTS_PER_PAGE'
+    RESET_EMOTICONS: 'RESET_EMOTICONS'
   }
 
 };

@@ -9,7 +9,8 @@ HeaderBtn = React.createClass({
   
   getDefaultProps: function () {
     return {
-      icon: 'gear'
+      icon: 'gear',
+      handleClick: function () { /* no-op */}
     }
   },
   
@@ -25,7 +26,7 @@ HeaderBtn = React.createClass({
     
     return (
       <button className='header-btn' title={this.props.tooltip}>
-        <span className={classes}></span>
+        <span className={classes} onClick={this.props.handleClick}></span>
       </button>
     );
   }
