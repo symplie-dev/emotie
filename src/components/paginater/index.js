@@ -10,7 +10,7 @@ Paginater = React.createClass({
   
   getInitialState: function () {
     return {
-      resultsPerPage: ModalStore.getSettings().resultsPerPage,
+      resultsPerPage: ModalStore.getSettings().resultsPerPage || 10,
       pageIndex: PaginaterStore.getPageIndex(),
       emoticons: PaginaterStore.getEmoticons()
     };
@@ -43,14 +43,16 @@ Paginater = React.createClass({
     var numPages = Math.ceil(this.state.emoticons.length / this.state.resultsPerPage),
         pages    = [],
         style    = {},
+        key      = 0,
         i;
     
     style.width = (numPages * 300) + 'px';
     style.left = (-this.state.pageIndex * 300) + 'px';
     
     for (i = 0; i < this.state.emoticons.length; ) {
-      pages.push(<Page items={this.state.emoticons.slice(i, i + this.state.resultsPerPage)} key={i} />);
+      pages.push(<Page items={this.state.emoticons.slice(i, i + this.state.resultsPerPage)} key={key} />);
       i += this.state.resultsPerPage;
+      key++;
     }
     
     return (

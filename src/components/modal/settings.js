@@ -40,7 +40,7 @@ SettingsModal = React.createClass({
   handleResultsPerPageChange: function (evt) {
     var currSettings = this.state.tmpSettings;
     
-    currSettings.resultsPerPage = evt.target.value;
+    currSettings.resultsPerPage = parseInt(evt.target.value);
     
     this.setState({ tmpSettings: this.state.tmpSettings });
   },
@@ -56,6 +56,7 @@ SettingsModal = React.createClass({
   handleSave: function () {
     ModalActions.setSettings(this.state.tmpSettings);
     ModalActions.hideSettingsModal();
+    PaginaterActions.goToPage(0);
   },
   
   handleReset: function () {
@@ -95,8 +96,9 @@ SettingsModal = React.createClass({
                 <div className='modal-body-val'>
                   <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
                     <option value='6'>6</option>
+                    <option value='8'>8</option>
                     <option value='10'>10</option>
-                    <option value='20'>20</option>
+                    <option value='12'>12</option>
                   </select>
                 </div>
               </div>
