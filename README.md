@@ -1,6 +1,6 @@
 # Emotie
 
-_Emotie gives you quick access to your favorite ascii emoticons_
+_Emotie gives you quick access to your favorite unicode emoticons_
 
 ### Dev Setup
 
