@@ -198,6 +198,8 @@
     line-height: 11px;
   }
   
+  .warning-lbl.hide { display: none; }
+  
   .warning-input {
     border: 1px solid @red;
     border-radius: 4px;
@@ -249,4 +251,24 @@
   animation-name: shakeReset;
   animation-duration: 0.8s;
   animation-fill-mode: both;
+}
+
+.modal-input-row {
+  padding: 2.5px 5px;
+  
+  &:first-child { padding-top: 5px; }
+  &:last-child { padding-bottom: 5px; }
+}
+
+.emoticon-details-input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 6px 5px;
+  width: 100%;
+  
+  &:active, &:focus {
+    border: 1px solid #333;
+  } 
 }

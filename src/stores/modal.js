@@ -1,13 +1,15 @@
 'use strict';
 
-var assign                   = require('object-assign'),
-    EventEmitter             = require('events').EventEmitter,
-    Dispatcher               = require('../dispatcher'),
-    ModalConstants           = require('../constants/modal'),
-    Dao                      = require('../database'),
-    _settings                = { stats: {} },
-    _isSettingsModalVisible  = false,
-    _isSettingsModalAnimated = false,
+var assign                     = require('object-assign'),
+    EventEmitter               = require('events').EventEmitter,
+    Dispatcher                 = require('../dispatcher'),
+    ModalConstants             = require('../constants/modal'),
+    Dao                        = require('../database'),
+    _settings                  = { stats: {} },
+    _isSettingsModalVisible    = false,
+    _isSettingsModalAnimated   = false,
+    _isEmoticonDetailsVisible  = false,
+    _isEmoticonDetailsAnimated = false,
     ModalStore;
 
 function _showSettingsModal() {
@@ -35,6 +37,26 @@ function _setSettings(settings) {
   Dao.setSettings(settings);
 }
 
+function _showEmoticonDetailsModal() {
+  _isEmoticonDetailsVisible = true;
+  _isEmoticonDetailsAnimated = true;
+  
+  setTimeout(function () {
+    _isEmoticonDetailsAnimated = false;
+    ModalStore.emitChange();
+  }, 400);
+}
+
+function _hideEmoticonDetailsModal() {
+  _isEmoticonDetailsVisible = false;
+  _isEmoticonDetailsAnimated = true;
+  
+  setTimeout(function () {
+    _isEmoticonDetailsAnimated = false;
+    ModalStore.emitChange();
+  }, 400);
+}
+
 ModalStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
     this.emit('change');
@@ -58,6 +80,14 @@ ModalStore = assign({}, EventEmitter.prototype, {
   
   getSettings: function () {
     return _settings;
+  },
+  
+  getIsEmoticonDetailsVisible: function () {
+    return _isEmoticonDetailsVisible;
+  },
+  
+  getIsEmoticonDetailsAnimated: function () {
+    return _isEmoticonDetailsAnimated;
   }
 });
 
@@ -74,6 +104,16 @@ ModalStore.dispatchToken = Dispatcher.register(function(action) {
     case ModalConstants.ActionTypes.SET_SETTINGS:
       _setSettings(action.settings);
       ModalStore.emitChange();
+      break;
+    case ModalConstants.ActionTypes.SHOW_EMOTICON_DETAILS_MODAL:
+      console.log('showing!')
+      _showEmoticonDetailsModal();
+      ModalStore.emitChange();
+      break;
+    case ModalConstants.ActionTypes.HIDE_EMOTICON_DETAILS_MODAL:
+      _hideEmoticonDetailsModal();
+      ModalStore.emitChange();
+      break;
     default:
       // no-op
       break;

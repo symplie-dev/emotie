@@ -22,7 +22,20 @@ ModalActions = {
       type: ModalConstants.ActionTypes.SET_SETTINGS,
       settings: settings
     });
-  }
+  },
+  
+  showEmoticonDetailsModal: function () {
+    console.log('show emoticon details')
+    Dispatcher.dispatch({
+      type: ModalConstants.ActionTypes.SHOW_EMOTICON_DETAILS_MODAL
+    });
+  },
+  
+  hideEmoticonDetailsModal: function () {
+    Dispatcher.dispatch({
+      type: ModalConstants.ActionTypes.HIDE_EMOTICON_DETAILS_MODAL
+    });
+  },
 };
 
 module.exports = ModalActions;

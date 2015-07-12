@@ -34,6 +34,7 @@ ModalCtrls = React.createClass({
           'solid-btn': true,
           'hide': this.props.rightBtnIsVisible
         });
+        
     return (
       <div className='modal-ctrls'>
         <button className={ leftBtnClasses } onClick={ this.props.handleClickLeftBtn}>

@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="icon128.svg"
+   sodipodi:docname="icon.svg"
    inkscape:export-filename="C:\Users\Benjamin\Projects\emotie\emotie\img\icon128.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.8561553"
-     inkscape:cx="61.845006"
+     inkscape:cx="-18.697824"
      inkscape:cy="39.702349"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -58,7 +58,7 @@
      id="layer1"
      transform="translate(0,-924.36215)">
     <rect
-       style="opacity:1;fill:#007aff;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#4078c0;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect3344"
        width="128"
        height="128"
@@ -74,13 +74,13 @@
        cy="972.97058"
        cx="89.96347"
        id="ellipse4145"
-       style="opacity:1;fill:#007aff;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#4078c0;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        rx="9.6974649"
        ry="15.893065" />
     <ellipse
        ry="15.893065"
        rx="9.6974649"
-       style="opacity:1;fill:#007aff;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#4078c0;fill-opacity:0.98039216;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="ellipse4147"
        cx="63.96347"
        cy="972.97058" />

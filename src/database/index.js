@@ -121,7 +121,17 @@ EmotieDao = {
    * @return {Promise<Emoticon>} The emoticon matching the given name 
    */
   getEmoticon: function (name) {
+    var deferred = Q.defer();
     
+    chrome.storage.sync.get('emoticons', function (data) {
+      var filtered = data.emoticons.filter(function (emoticon) {
+            return emoticon.name === name;
+          });
+      
+      deferred.resolve(filtered[0]);
+    });
+    
+    return deferred.promise;
   },
   
   /**
@@ -145,7 +155,7 @@ EmotieDao = {
       }).length === 0;
       
       if (unique) {
-        emoticons.add(newEmoticon);
+        emoticons.push(newEmoticon);
         chrome.storage.sync.set({ 'emoticons': emoticons }, function () {
           deferred.resolve(emoticons);
         });

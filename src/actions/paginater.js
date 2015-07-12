@@ -16,6 +16,12 @@ PaginaterActions = {
     Dispatcher.dispatch({
       type: PaginaterConstants.ActionTypes.RESET_EMOTICONS
     });
+  },
+  
+  updateEmoticons: function () {
+    Dispatcher.dispatch({
+      type: PaginaterConstants.ActionTypes.UPDATE_EMOTICONS
+    });
   }
 };
 

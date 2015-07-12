@@ -66,6 +66,7 @@ SettingsModal = React.createClass({
       PaginaterActions.resetEmoticons();
       $('.reset-input').val('');
       ModalActions.hideSettingsModal();
+      PaginaterActions.goToPage(0);
     } else {
       $('.settings-modal').removeClass('shake-reset').addClass('shake-reset');
     }

@@ -1,8 +1,9 @@
-var React         = require('react'),
-    Header        = require('./components/header'),
-    Paginater     = require('./components/paginater'),
-    Toast         = require('./components/toast'),
-    SettingsModal = require('./components/modal/settings');
+var React                = require('react'),
+    Header               = require('./components/header'),
+    Paginater            = require('./components/paginater'),
+    Toast                = require('./components/toast'),
+    SettingsModal        = require('./components/modal/settings'),
+    EmoticonDetailsModal = require('./components/modal/emoticon-details');
     
 var testList = [{ name: 'Le Face Face', text: '( ͡° ͜ʖ ͡°)', tags: 'le face face, lenny face, happy, smile' }
                ,{ name: 'Oh Well', text: '¯\\_(ツ)_/¯', tags: 'oh well, whaatever' }
@@ -15,3 +16,4 @@ React.render(<Header />, document.getElementById('headerContainer'));
 React.render(<Paginater />, document.getElementById('paginaterContainer'));
 React.render(<Toast />, document.getElementById('toastContainer'));
 React.render(<SettingsModal />, document.getElementById('settingsModalContainer'));
+React.render(<EmoticonDetailsModal />, document.getElementById('emoticonDetailsModalContainer'));

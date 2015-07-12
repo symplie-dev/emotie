@@ -8,9 +8,9 @@ Header = React.createClass({
   render: function () {    
     return (
       <div className='header'>
-        <HeaderBtn icon='gear' tooltip='settings' handleClick={ModalActions.showSettingsModal} />
+        <HeaderBtn icon='gear' tooltip='settings' handleClick={ ModalActions.showSettingsModal } />
         <SearchInput />
-        <HeaderBtn icon='plus' tooltip='new' />
+        <HeaderBtn icon='plus' tooltip='new' handleClick={ ModalActions.showEmoticonDetailsModal }/>
       </div>
     );
   }

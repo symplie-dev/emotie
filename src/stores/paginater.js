@@ -21,6 +21,17 @@ function _resetEmoticons() {
   return deferred.promise;
 }
 
+function _updateEmoticons() {
+  var deferred = Q.defer();
+  
+  Dao.getEmoticons().then(function (emoticons) {
+    _emoticons = emoticons;
+    deferred.resolve();
+  })
+  
+  return deferred.promise;
+}
+
 PaginaterStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
     this.emit('change');
@@ -50,8 +61,12 @@ PaginaterStore.dispatchToken = Dispatcher.register(function(action) {
       PaginaterStore.emitChange();
       break;
     case PaginaterConstants.ActionTypes.RESET_EMOTICONS:
-      console.log('resetting')
       _resetEmoticons().then(function () {
+        PaginaterStore.emitChange();
+      });
+      break;
+    case PaginaterConstants.ActionTypes.UPDATE_EMOTICONS:
+      _updateEmoticons().then(function () {
         PaginaterStore.emitChange();
       });
       break;
