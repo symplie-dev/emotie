@@ -5,7 +5,7 @@ var assign                     = require('object-assign'),
     Dispatcher                 = require('../dispatcher'),
     ModalConstants             = require('../constants/modal'),
     Dao                        = require('../database'),
-    _settings                  = { stats: {} },
+    _settings                  = { stats: {}, resultsPerPage: 6 },
     _isSettingsModalVisible    = false,
     _isSettingsModalAnimated   = false,
     _isEmoticonDetailsVisible  = false,
@@ -57,6 +57,16 @@ function _hideEmoticonDetailsModal() {
   }, 400);
 }
 
+function _setStats(settings) {
+  _settings.stats = {};
+  
+   Dao.getSyncBytesInUse().then(function (bytes) {
+    _settings.stats.syncBytesInUse = bytes;
+    _settings.stats.syncQuota = Dao.getSyncQuota();
+    ModalStore.emitChange();
+  });
+}
+
 ModalStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
     this.emit('change');
@@ -88,6 +98,21 @@ ModalStore = assign({}, EventEmitter.prototype, {
   
   getIsEmoticonDetailsAnimated: function () {
     return _isEmoticonDetailsAnimated;
+  },
+  
+  initSettings: function () {
+    Dao.getSettings().then(function (settings) {
+      _settings = settings;
+      
+      if (!_settings) {
+        Dao.resetSettings().then(function (settings) {
+          _settings = settings;
+          _setStats(_settings);
+        });
+      } else {
+        _setStats(_settings);
+      }
+    });
   }
 });
 
@@ -106,7 +131,6 @@ ModalStore.dispatchToken = Dispatcher.register(function(action) {
       ModalStore.emitChange();
       break;
     case ModalConstants.ActionTypes.SHOW_EMOTICON_DETAILS_MODAL:
-      console.log('showing!')
       _showEmoticonDetailsModal();
       ModalStore.emitChange();
       break;
@@ -119,19 +143,5 @@ ModalStore.dispatchToken = Dispatcher.register(function(action) {
       break;
   }
 });
-
-// Fetch settings
-(function () {
-  Dao.getSettings().then(function (settings) {
-    _settings = settings;
-    _settings.stats = {};
-    
-    Dao.getSyncBytesInUse().then(function (bytes) {
-      _settings.stats.syncBytesInUse = bytes;
-      _settings.stats.syncQuota = Dao.getSyncQuota();
-      ModalStore.emitChange();
-    });
-  });
-})()
 
 module.exports = ModalStore;

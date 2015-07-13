@@ -25,7 +25,6 @@ ModalActions = {
   },
   
   showEmoticonDetailsModal: function () {
-    console.log('show emoticon details')
     Dispatcher.dispatch({
       type: ModalConstants.ActionTypes.SHOW_EMOTICON_DETAILS_MODAL
     });

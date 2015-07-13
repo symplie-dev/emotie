@@ -39,12 +39,14 @@ EmotieDao = {
     { name: 'Strong Disapproval', text: 'ಠ╭╮ಠ' },
     { name: 'Monkey', text: '﴾͡๏̯͡๏﴿' },
     { name: 'Bear', text: 'ʕ•ᴥ•ʔ' },
-    { name: 'Come At Me Bro', text: '(ง ͠° ͟ل͜ ͡°)ง' }
+    { name: 'Come At Me Bro', text: '(ง ͠° ͟ل͜ ͡°)ง' },
+    { name: 'Song and Dance', text: '♪~ ᕕ(ᐛ)ᕗ'},
+    { name: 'Why Not', text: '(\\/) (°,,,°) (\\/)'}
   ],
   
   defaultSettings: {
     sort: 'SORT_NAME',
-    resultsPerPage: 10
+    resultsPerPage: 6
   },
   
   /**
@@ -57,23 +59,30 @@ EmotieDao = {
   init: function () {
     var deferred        = Q.defer(),
         self            = this,
-        emotePromise    = 0,
-        settingsPromise = 0;
+        emotePromise    = Q.defer(),
+        settingsPromise = Q.defer();
     
     chrome.storage.sync.get('emoticons', function (data) {
       if (!data.emoticons) {
-        emotePromise = self.resetEmoticons();
+        self.resetEmoticons().then(function () {
+          emotePromise.resolve();
+        });
+      } else {
+        emotePromise.resolve();
       }
     });
     
     chrome.storage.local.get('settings', function (data) {
       if (!data.settings) {
-        console.log('reset settings');
-        settingsPromise = self.resetSettings();
+        self.resetSettings().then(function () {
+          settingsPromise.resolve();
+        });
+      } else {
+        settingsPromise.resolve();
       }
     });
     
-    Q.allSettled([emotePromise, settingsPromise]).then(function () {
+    Q.allSettled([emotePromise.promise, settingsPromise.promise]).then(function () {
       deferred.resolve();
     });
     
@@ -151,7 +160,7 @@ EmotieDao = {
           emoticons = data.emoticons || [];
       
       unique = data.emoticons.filter(function (emoticon) {
-        return emoticon.name === newEmoticon.name;
+        return emoticon.name.toLowerCase() === newEmoticon.name.toLowerCase();
       }).length === 0;
       
       if (unique) {
@@ -219,8 +228,6 @@ EmotieDao = {
     var deferred = Q.defer();
     
     chrome.storage.local.get('settings', function (data) {
-      console.log('get settings:')
-      console.log(data.settings);
       deferred.resolve(data.settings);
     });
     
@@ -236,9 +243,6 @@ EmotieDao = {
   setSettings: function (settings) {
     var deferred = Q.defer(),
         self     = this;
-    
-    console.log('really setting')
-    console.log(settings);
     
     chrome.storage.local.set({ 'settings': settings }, function () {
       deferred.resolve(settings);

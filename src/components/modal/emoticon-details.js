@@ -66,10 +66,8 @@ EmoticonDetails = React.createClass({
     
     if (this.state.name.length > 0 && this.state.emoticonText.length > 0) {
       Dao.addEmoticon({ name: this.state.name, text: this.state.emoticonText }).then(function () {
-        console.log('emoticon inserted');
         PaginaterActions.updateEmoticons();
         ModalActions.hideEmoticonDetailsModal();
-        ToastActions.toast('New Emoticon Added!');
         self.setState({
           showUniqueWarning: false,
           name: '',
@@ -77,7 +75,6 @@ EmoticonDetails = React.createClass({
         });
         $('.emoticon-details-input').val('');
       }).catch(function () {
-        console.log('show unique warning')
         self.setState({
           showUniqueWarning: true
         });
@@ -114,8 +111,6 @@ EmoticonDetails = React.createClass({
           'warning-lbl': true,
           'hide': !this.state.showUniqueWarning
         });
-    
-    console.log('show warning: '+ this.state.showUniqueWarning)
         
     return (
       <div className={outerClasses}>

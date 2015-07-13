@@ -22,6 +22,8 @@ SettingsModal = React.createClass({
   
   componentDidMount: function () {
     ModalStore.addChangeListener(this.handleModalChange);
+    console.log('init settings!')
+    ModalStore.initSettings();
   },
 
   componentWillUnmount: function () {
@@ -29,6 +31,7 @@ SettingsModal = React.createClass({
   },
   
   handleModalChange: function () {
+    console.log('state changed');
     this.setState({
       isVisible:   ModalStore.getIsSettingsModalVisible(),
       animating:   ModalStore.getIsSettingsModalAnimated(),
