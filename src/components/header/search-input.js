@@ -6,7 +6,7 @@ SearchInput = React.createClass({
   render: function () {    
     return (
       <div className='search-input'>
-        <input type='text' placeholder='Search' />
+        <input type='text' placeholder='Search' style={ { visibility: 'hidden' } } />
       </div>
     );
   }
