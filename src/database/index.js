@@ -46,7 +46,7 @@ EmotieDao = {
   
   defaultSettings: {
     sort: 'SORT_NAME',
-    resultsPerPage: 6
+    resultsPerPage: 8
   },
   
   /**
