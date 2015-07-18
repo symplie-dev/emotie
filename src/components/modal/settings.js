@@ -22,7 +22,7 @@ SettingsModal = React.createClass({
   
   getDefaultProps: function () {
     return {
-      defaultTweet: 'Check%20out%20Emotie%2C%20a%20Chrome%20extension%20for%20quick%20access%20to%20fun%20emoticon%20faces...%20or%20don%27t%20%C2%AF%5C_(%E3%83%84)_%2F%C2%AF%3A%20https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Femotie%2Fhcfljnkdgalhlifbbgeonfpbejdenloa'
+      defaultTweet: 'Emotie%2C%20copy%20fun%20emoticon%20faces%20quick%2C%20or%20don%27t%20%C2%AF%5C_(%E3%83%84)_%2F%C2%AF%3A%20https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Femotie%2Fhcfljnkdgalhlifbbgeonfpbejdenloa'
     }
   },
   
