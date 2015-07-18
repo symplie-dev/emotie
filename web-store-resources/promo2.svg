@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1280"
+   height="800"
+   viewBox="0 0 1280 800.00001"
+   id="svg13894"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="promo2.svg"
+   inkscape:export-filename="C:\Users\Benjamin\Projects\emotie\web-store-resources\promo2.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs13896">
+    <filter
+       id="filter4269"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4271"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4273"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4275"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4277"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4279"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       id="filter4293"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4295"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4297"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4299"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4301"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4303"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       id="filter4305"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4307"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4309"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4311"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4313"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4315"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       id="filter4269-0"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4271-8"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4273-7"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4275-3"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4277-8"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4279-1"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       id="filter4293-0"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4295-1"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4297-7"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4299-2"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4301-9"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4303-1"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       id="filter4305-4"
+       inkscape:label="Drop Shadow"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4307-8"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.4" />
+      <feComposite
+         id="feComposite4309-8"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4311-2"
+         result="blur"
+         stdDeviation="3"
+         in="composite1" />
+      <feOffset
+         id="feOffset4313-4"
+         result="offset"
+         dy="0"
+         dx="0" />
+      <feComposite
+         id="feComposite4315-1"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter6666">
+      <feFlood
+         flood-opacity="0.313726"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood6668" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="out"
+         result="composite1"
+         id="feComposite6670" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="5"
+         result="blur"
+         id="feGaussianBlur6672" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset6674" />
+      <feComposite
+         in="offset"
+         in2="SourceGraphic"
+         operator="atop"
+         result="composite2"
+         id="feComposite6676" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5939697"
+     inkscape:cx="642.37091"
+     inkscape:cy="399.99998"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1600"
+     inkscape:window-height="841"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata13899">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-252.36216)">
+    <rect
+       style="opacity:1;fill:#4078c0;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3344"
+       width="1280"
+       height="800"
+       x="0"
+       y="252.36218" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="86.606087"
+       y="961.55255"
+       id="text6455"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6457"
+         x="86.606087"
+         y="961.55255"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">( ͡° ͜ʖ ͡°)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-121.90476"
+       y="25.314552"
+       id="text6459"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6461"
+         x="-121.90476"
+         y="25.314552" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="853.26068"
+       y="744.81726"
+       id="text6463"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6465"
+         x="853.26068"
+         y="744.81726"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">¯\_(ツ)_/¯</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="974.68262"
+       y="617.54584"
+       id="text6469"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6471"
+         x="974.68262"
+         y="617.54584"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">▄︻̷̿┻̿═━一</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="46.519878"
+       y="655.63342"
+       id="text6473"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6475"
+         x="46.519878"
+         y="655.63342"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6477"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(0,492.36216)"><flowRegion
+         id="flowRegion6479"><rect
+           id="rect6481"
+           width="118.85714"
+           height="134.09525"
+           x="-149.33333"
+           y="-422.85715" /></flowRegion><flowPara
+         id="flowPara6483" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="85.650032"
+       y="773.12311"
+       id="text6485"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6487"
+         x="85.650032"
+         y="773.12311"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">(▀̿Ĺ̯▀̿ ̿)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.992783"
+       y="555.53229"
+       id="text6489"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6491"
+         x="37.992783"
+         y="555.53229"
+         style="font-weight:bold">༼ つ ◕_◕ ༽つ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1124.9058"
+       y="676.16699"
+       id="text6493"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6495"
+         x="1124.9058"
+         y="676.16699"
+         style="font-weight:bold">ಠ_ಠ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="870.96045"
+       y="1020.5776"
+       id="text6497"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6499"
+         x="870.96045"
+         y="1020.5776"
+         style="font-weight:bold">(╯°□°）╯︵ ┻━┻</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="14.575603"
+       y="863.58154"
+       id="text6501"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6503"
+         x="14.575603"
+         y="863.58154"
+         style="font-weight:bold">┬──┬ ノ( ゜-゜ノ)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1089.4293"
+       y="758.80389"
+       id="text6505"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6507"
+         x="1089.4293"
+         y="758.80389"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">(☞ﾟヮﾟ)☞</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1091.2316"
+       y="846.07245"
+       id="text6509"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6511"
+         x="1091.2316"
+         y="846.07245"
+         style="font-weight:bold">(ಥ_ಥ)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="834.29865"
+       y="866.81927"
+       id="text6513"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6515"
+         x="834.29865"
+         y="866.81927"
+         style="font-weight:bold">☉_☉</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="416.09525"
+       y="720.36218"
+       id="text6517"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6519"
+         x="416.09525"
+         y="720.36218"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">ಠ╭╮ಠ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="315.73788"
+       y="785.05981"
+       id="text6521"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="315.73788"
+         y="785.05981"
+         id="tspan6525"
+         style="font-weight:bold">﴾͡๏̯͡๏﴿</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="353.6691"
+       y="598.97241"
+       id="text6529"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6531"
+         x="353.6691"
+         y="598.97241"
+         style="font-weight:bold">ʕ•ᴥ•ʔ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="168.57675"
+       y="457.49646"
+       id="text6533"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6535"
+         x="168.57675"
+         y="457.49646"
+         style="font-weight:bold">(ง ͠° ͟ل͜ ͡°)ง</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="326.10071"
+       y="944.8819"
+       id="text6537"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6539"
+         x="326.10071"
+         y="944.8819"
+         style="font-weight:bold">♪~ ᕕ(ᐛ)ᕗ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="897.71545"
+       y="485.08588"
+       id="text6541"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6543"
+         x="897.71545"
+         y="485.08588"
+         style="font-weight:bold">(\/) (°,,,°) (\/)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6547"
+       y="1017.4029"
+       x="224.37563"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="1017.4029"
+         x="224.37563"
+         id="tspan6549"
+         sodipodi:role="line">(☞ﾟヮﾟ)☞</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6551"
+       y="930.12036"
+       x="1038.03"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan6553"
+         y="930.12036"
+         x="1038.03"
+         sodipodi:role="line">﴾͡๏̯͡๏﴿</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="525.35309"
+       y="557.64392"
+       id="text6564"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6566"
+         x="525.35309"
+         y="557.64392"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">(っ˘ڡ˘ς)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="478.40823"
+       y="843.32794"
+       id="text6568"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6570"
+         x="478.40823"
+         y="843.32794"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">Ƹ̵̡Ӝ̵̨̄Ʒ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="595.07294"
+       y="909.06262"
+       id="text6572"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6574"
+         x="595.07294"
+         y="909.06262"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">⊜_⊜</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="754.24725"
+       y="578.26392"
+       id="text6576"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6578"
+         x="754.24725"
+         y="578.26392"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">ᄽὁȍ ̪ őὀᄿ</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6678"
+       y="340.54962"
+       x="41.104397"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="340.54962"
+         x="41.104397"
+         id="tspan6680"
+         sodipodi:role="line">ᄽὁȍ ̪ őὀᄿ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:135.05072021px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter6666)"
+       x="437.39093"
+       y="994.43408"
+       id="text13961"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan13963"
+         x="437.39093"
+         y="994.43408"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:helvetica;-inkscape-font-specification:helvetica;fill:#ffffff">emotie</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6682"
+       y="459.32794"
+       x="460.12253"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="459.32794"
+         x="460.12253"
+         id="tspan6684"
+         sodipodi:role="line">Ƹ̵̡Ӝ̵̨̄Ʒ</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6686"
+       y="347.05377"
+       x="343.72235"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         y="347.05377"
+         x="343.72235"
+         id="tspan6688"
+         sodipodi:role="line">(╯°□°）╯︵ ┻━┻</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="641.89941"
+       y="417.02194"
+       id="text6690"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6692"
+         x="641.89941"
+         y="417.02194"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1">(☞ﾟヮﾟ)☞</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6694"
+       y="346.45642"
+       x="878.03094"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="346.45642"
+         x="878.03094"
+         id="tspan6696"
+         sodipodi:role="line">(▀̿Ĺ̯▀̿ ̿)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6698"
+       y="398.87213"
+       x="1057.1682"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="398.87213"
+         x="1057.1682"
+         id="tspan6700"
+         sodipodi:role="line">⊜_⊜</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6702"
+       y="308.93362"
+       x="1104.8572"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#2058a0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#2058a0;fill-opacity:1"
+         y="308.93362"
+         x="1104.8572"
+         id="tspan6704"
+         sodipodi:role="line">ಠ╭╮ಠ</tspan></text>
+    <g
+       id="g5855"
+       transform="matrix(4.8160947,0,0,4.7282596,4251.7685,-1324.4579)">
+      <circle
+         r="52.5"
+         cy="405.86453"
+         cx="-749.93719"
+         id="path4146-4"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter4269-0)" />
+      <ellipse
+         ry="15.839013"
+         rx="9.664609"
+         cy="390.45328"
+         cx="-750.2428"
+         id="path4163"
+         style="opacity:1;fill:#4078c0;fill-opacity:0.98039216;stroke:none;stroke-width:4.32399988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <ellipse
+         style="opacity:1;fill:#4078c0;fill-opacity:0.98039216;stroke:none;stroke-width:4.32399988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="ellipse4165"
+         cx="-724.92163"
+         cy="390.45328"
+         rx="9.664609"
+         ry="15.839013" />
+    </g>
+  </g>
+</svg>
