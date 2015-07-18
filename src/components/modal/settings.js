@@ -20,9 +20,14 @@ SettingsModal = React.createClass({
     }
   },
   
+  getDefaultProps: function () {
+    return {
+      defaultTweet: 'Check%20out%20Emotie%2C%20a%20Chrome%20extension%20for%20quick%20access%20to%20fun%20emoticon%20faces...%20or%20don%27t%20%C2%AF%5C_(%E3%83%84)_%2F%C2%AF%3A%20https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Femotie%2Fhcfljnkdgalhlifbbgeonfpbejdenloa'
+    }
+  },
+  
   componentDidMount: function () {
     ModalStore.addChangeListener(this.handleModalChange);
-    console.log('init settings!')
     ModalStore.initSettings();
   },
 
@@ -31,7 +36,6 @@ SettingsModal = React.createClass({
   },
   
   handleModalChange: function () {
-    console.log('state changed');
     this.setState({
       isVisible:   ModalStore.getIsSettingsModalVisible(),
       animating:   ModalStore.getIsSettingsModalAnimated(),
@@ -99,6 +103,8 @@ SettingsModal = React.createClass({
                 <div className='modal-body-lbl'>Emoticons Per Page</div>
                 <div className='modal-body-val'>
                   <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
+                    <option value='1'>1</option>
+                    <option value='3'>3</option>
                     <option value='6'>6</option>
                     <option value='8'>8</option>
                     <option value='10'>10</option>
@@ -113,11 +119,20 @@ SettingsModal = React.createClass({
                 </div>
               </div>
               <div className='modal-body-row'>
-              <div className='modal-body-lbl'>Reset emoticons to default emoticon set</div>
-              <div className='warning-lbl'>Warning reset cannot be undone</div>
-              <input type='text' className='warning-input reset-input' placeholder='type reset' />
-              <button className='reset-btn' onClick={ this.handleReset }>reset</button>
-            </div>
+                <div className='modal-body-lbl'>Share ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</div>
+                <div className='modal-body-val'>
+                  <a className='twitter-share-button' href={'https://twitter.com/intent/tweet?text=' + this.props.defaultTweet}>
+                    <i></i>
+                    <span className='label'>Tweet</span>
+                  </a>
+                </div>
+              </div>
+              <div className='modal-body-row ex-padding'>
+                <div className='modal-body-lbl'>Reset emoticons to default emoticon set</div>
+                <div className='warning-lbl'>Warning reset cannot be undone</div>
+                <input type='text' className='warning-input reset-input' placeholder='type reset' />
+                <button className='reset-btn' onClick={ this.handleReset }>reset</button>
+              </div>
             </div>
             <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ this.handleSave } />
           </div>
