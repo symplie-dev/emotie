@@ -1,4 +1,9 @@
+# Ignore built files
 extension/dist/
+# Ignore NPM modules
 node_modules/
+# Ignore Windows thumbnails
 **/Thumbs.db
-**/extension.zip
+# Ignore zipped file in root used for production deployment to Chrome Web Store
+extension.zip
+emotie.zip
