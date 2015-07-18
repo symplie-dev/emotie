@@ -103,8 +103,6 @@ SettingsModal = React.createClass({
                 <div className='modal-body-lbl'>Emoticons Per Page</div>
                 <div className='modal-body-val'>
                   <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
-                    <option value='1'>1</option>
-                    <option value='3'>3</option>
                     <option value='6'>6</option>
                     <option value='8'>8</option>
                     <option value='10'>10</option>
