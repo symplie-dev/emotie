@@ -2,6 +2,8 @@
 
 _Emotie gives you quick access to your favorite unicode emoticons_
 
+Available in the Chrome Web Store for free: [Emotie](https://chrome.google.com/webstore/detail/emotie/hcfljnkdgalhlifbbgeonfpbejdenloa)
+
 ### Dev Setup
 
 1. Clone the project
