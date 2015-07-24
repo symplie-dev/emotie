@@ -1,6 +1,6 @@
-var React = require('react'),
-    cx    = require('classnames'),
-    $     = require('jquery'),
+var React            = require('react'),
+    cx               = require('classnames'),
+    $                = require('jquery'),
     Dao              = require('../../database'),
     ModalActions     = require('../../actions/modal'),
     SettingsStore    = require('../../stores/settings'),
@@ -30,8 +30,6 @@ EmoticonDetails = React.createClass({
     return {
       name: this.props.initialName,
       emoticonText: this.props.initialEmoticonText,
-      isVisible: false,
-      animating: false,
       showUniqueWarning: false
     };
   },
@@ -71,6 +69,13 @@ EmoticonDetails = React.createClass({
     this.remove();
   },
   
+  shake: function () {
+    $('.modal').addClass('shake');
+    setTimeout(function () {
+      $('.modal').removeClass('shake');
+    }, 1000);
+  },
+  
   saveNew: function () {
     var self = this;
     
@@ -82,22 +87,29 @@ EmoticonDetails = React.createClass({
         self.setState({
           showUniqueWarning: true
         });
-        
-        $('.modal').addClass('shake');
-        setTimeout(function () {
-          $('.modal').removeClass('shake');
-        }, 1000);
+        this.shake();
       });
     } else {
-      $('.modal').addClass('shake');
-      setTimeout(function () {
-        $('.modal').removeClass('shake');
-      }, 1000);
+      this.shake();
     }
   },
   
   saveUpdate: function () {
+    var self = this;
     
+    if (this.state.name.length > 0 && this.state.emoticonText.length > 0) {
+      Dao.updateEmoticon(this.props.initialName, { name: this.state.name, text: this.state.emoticonText }).then(function () {
+        PaginaterActions.updateEmoticons();
+        self.remove();
+      }).catch(function (err) {
+        self.setState({
+          showUniqueWarning: true
+        });
+        self.shake();
+      });
+    } else {
+      self.shake();
+    }
   },
   
   handleNameChange: function (evt) {
@@ -110,6 +122,25 @@ EmoticonDetails = React.createClass({
     this.setState({
       emoticonText: evt.target.value
     });
+  },
+  
+  handleDelete: function () {
+    var deleteVal = $('.delete-input').val(),
+        self      = this;
+    
+    if (deleteVal.toLowerCase() === self.props.initialName.toLowerCase9) {
+      $('.delete-input').val('');
+      Dao.deleteEmoticon(self.props.initialName).then(function () {
+        PaginaterActions.updateEmoticons();
+        self.remove();
+      }).catch(function (err) {
+        console.log('Error:');
+        console.log(err);
+      });
+      self.remove();
+    } else {
+      self.shake();
+    }
   },
   
   render: function () {
@@ -152,7 +183,7 @@ EmoticonDetails = React.createClass({
                     <div className='danger-input-wrapper'>
                       <input type='text' className='danger-input delete-input' placeholder='Type emoticon name' />
                     </div>
-                    <button className='danger-btn delete-btn'>delete</button>
+                    <button className='danger-btn delete-btn' onClick={ this.handleDelete }>delete</button>
                   </div>
                 </div>
               </div>
