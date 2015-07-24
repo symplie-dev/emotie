@@ -41,7 +41,13 @@ EmotieDao = {
     { name: 'Bear', text: 'ʕ•ᴥ•ʔ' },
     { name: 'Come At Me Bro', text: '(ง ͠° ͟ل͜ ͡°)ง' },
     { name: 'Song and Dance', text: '♪~ ᕕ(ᐛ)ᕗ'},
-    { name: 'Why Not', text: '(\\/) (°,,,°) (\\/)'}
+    { name: 'Why Not', text: '(\\/) (°,,,°) (\\/)'},
+    { name: 'Dignified', text: '( ಠ ͜ʖರೃ)'},
+    { name: 'Spider', text: 'ᄽὁȍ ̪ őὀᄿ'},
+    { name: 'A Thought', text: '(°ロ°)☝'},
+    { name: 'Wink', text: '◕‿↼'},
+    { name: 'Crazy', text: '⊙_ʘ'},
+    { name: 'Glasses', text: '⊜_⊜'}
   ],
   
   defaultSettings: {
@@ -143,13 +149,25 @@ EmotieDao = {
     return deferred.promise;
   },
   
+  isEmoticonUnique: function (name, emoticons) {
+    var isUnique;
+    
+    emoticons = emoticons || [];
+      
+    isUnique = emoticons.filter(function (emoticon) {
+      return emoticon.name.toLowerCase() === name.toLowerCase();
+    }).length === 0;
+    
+    return isUnique;
+  },
+  
   /**
    * Add an emoticon to the Chrome sync storage. Note: emoticon
    * names must be unique. Adding duplicates will result in an
    * error.
    * 
    * @param  {Emoticon} newEmoticon     The emoticon object to add
-   * @return {Promise<Array<Emoticon>>} The list of emoticons including the new one
+   * @return {Promise<Array<Emoticon>>} The list of emoti` including the new one
    */
   addEmoticon: function (newEmoticon) {
     var deferred = Q.defer(),
@@ -159,9 +177,11 @@ EmotieDao = {
       var unique,
           emoticons = data.emoticons || [];
       
-      unique = data.emoticons.filter(function (emoticon) {
-        return emoticon.name.toLowerCase() === newEmoticon.name.toLowerCase();
-      }).length === 0;
+      // unique = data.emoticons.filter(function (emoticon) {
+      //   return emoticon.name.toLowerCase() === newEmoticon.name.toLowerCase();
+      // }).length === 0;
+      
+      unique = self.isEmoticonUnique(newEmoticon.name, emoticons);
       
       if (unique) {
         emoticons.push(newEmoticon);
@@ -173,6 +193,54 @@ EmotieDao = {
           reason: self.Constants.DUPLICATE
         });
       }
+    });
+    
+    return deferred.promise;
+  },
+  
+  /**
+   * Update an emoticon in the Chrome sync storage. You must
+   * provide the original name of the emoticon to update, however
+   * you may also provide a new name.
+   * 
+   * @param  {string}   name        The original name of the emoticon to update
+   * @param  {Emoticon} updEmoticon The updated emoticon object
+   * @return {Promise<Emoticon>}    The updated emoticon after successful update
+   */
+  updateEmoticon: function (name, updEmoticon) {
+    var deferred = Q.defer(),
+        self     = this;
+    
+    chrome.storage.sync.get('emoticons', function (data) {
+      var unique,
+          emoticons = data.emoticons || [];
+      
+      // If the name has been updated, make sure that it is uninque
+      if (name.toLowerCase() !== updEmoticon.name.toLowerCase()) {
+        unique = self.isEmoticonUnique(updEmoticon.name, emoticons);
+      } else {  // If the name is unchanged it must already be unique
+        unique = true;
+      }
+      
+      if (unique) {
+        emoticons = emoticons.map(function (emoticon) {
+          if (emoticon.name.toLowerCase() === name.toLowerCase()) {
+            emoticon.name = updEmoticon.name;
+            emoticon.text = updEmoticon.text;
+          }
+          
+          return emoticon;
+        });
+        
+        chrome.storage.sync.set({ 'emoticons': emoticons }, function () {
+          deferred.resolve(emoticons);
+        });
+      } else {
+        deferred.reject({
+          reason: self.Constants.DUPLICATE
+        });
+      }
+      
     });
     
     return deferred.promise;
