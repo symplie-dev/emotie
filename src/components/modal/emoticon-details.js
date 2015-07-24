@@ -128,11 +128,12 @@ EmoticonDetails = React.createClass({
     var deleteVal = $('.delete-input').val(),
         self      = this;
     
-    if (deleteVal.toLowerCase() === self.props.initialName.toLowerCase9) {
+    if (deleteVal.toLowerCase() === self.props.initialName.toLowerCase()) {
       $('.delete-input').val('');
       Dao.deleteEmoticon(self.props.initialName).then(function () {
         PaginaterActions.updateEmoticons();
         self.remove();
+        PaginaterActions.goToPage(0);
       }).catch(function (err) {
         console.log('Error:');
         console.log(err);
