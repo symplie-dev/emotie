@@ -41,7 +41,13 @@ EmotieDao = {
     { name: 'Bear', text: 'ʕ•ᴥ•ʔ' },
     { name: 'Come At Me Bro', text: '(ง ͠° ͟ل͜ ͡°)ง' },
     { name: 'Song and Dance', text: '♪~ ᕕ(ᐛ)ᕗ'},
-    { name: 'Why Not', text: '(\\/) (°,,,°) (\\/)'}
+    { name: 'Why Not', text: '(\\/) (°,,,°) (\\/)'},
+    { name: 'Dignified', text: '( ಠ ͜ʖರೃ)'},
+    { name: 'Spider', text: 'ᄽὁȍ ̪ őὀᄿ'},
+    { name: 'A Thought', text: '(°ロ°)☝'},
+    { name: 'Wink', text: '◕‿↼'},
+    { name: 'Crazy', text: '⊙_ʘ'},
+    { name: 'Glasses', text: '⊜_⊜'}
   ],
   
   defaultSettings: {
@@ -161,7 +167,7 @@ EmotieDao = {
    * error.
    * 
    * @param  {Emoticon} newEmoticon     The emoticon object to add
-   * @return {Promise<Array<Emoticon>>} The list of emoticons including the new one
+   * @return {Promise<Array<Emoticon>>} The list of emoti` including the new one
    */
   addEmoticon: function (newEmoticon) {
     var deferred = Q.defer(),
