@@ -8,5 +8,3 @@ var React                = require('react'),
 React.render(<Header />, document.getElementById('headerContainer'));
 React.render(<Paginater />, document.getElementById('paginaterContainer'));
 React.render(<Toast />, document.getElementById('toastContainer'));
-React.render(<SettingsModal />, document.getElementById('settingsModalContainer'));
-React.render(<EmoticonDetailsModal />, document.getElementById('emoticonDetailsModalContainer'));

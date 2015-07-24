@@ -37,16 +37,6 @@ function _setSettings(settings) {
   Dao.setSettings(settings);
 }
 
-function _showEmoticonDetailsModal() {
-  _isEmoticonDetailsVisible = true;
-  _isEmoticonDetailsAnimated = true;
-  
-  setTimeout(function () {
-    _isEmoticonDetailsAnimated = false;
-    ModalStore.emitChange();
-  }, 400);
-}
-
 function _hideEmoticonDetailsModal() {
   _isEmoticonDetailsVisible = false;
   _isEmoticonDetailsAnimated = true;
@@ -79,25 +69,9 @@ ModalStore = assign({}, EventEmitter.prototype, {
   removeChangeListener: function (callback) {
     this.removeListener('change', callback);
   },
-
-  getIsSettingsModalVisible: function () {
-    return _isSettingsModalVisible;
-  },
-  
-  getIsSettingsModalAnimated: function () {
-    return _isSettingsModalAnimated;
-  },
   
   getSettings: function () {
     return _settings;
-  },
-  
-  getIsEmoticonDetailsVisible: function () {
-    return _isEmoticonDetailsVisible;
-  },
-  
-  getIsEmoticonDetailsAnimated: function () {
-    return _isEmoticonDetailsAnimated;
   },
   
   initSettings: function () {
@@ -118,24 +92,8 @@ ModalStore = assign({}, EventEmitter.prototype, {
 
 ModalStore.dispatchToken = Dispatcher.register(function(action) {
   switch(action.type) {
-    case ModalConstants.ActionTypes.SHOW_SETTINGS_MODAL:
-      _showSettingsModal();
-      ModalStore.emitChange();
-      break;
-    case ModalConstants.ActionTypes.HIDE_SETTINGS_MODAL:
-      _hideSettingsModal();
-      ModalStore.emitChange();
-      break;
     case ModalConstants.ActionTypes.SET_SETTINGS:
       _setSettings(action.settings);
-      ModalStore.emitChange();
-      break;
-    case ModalConstants.ActionTypes.SHOW_EMOTICON_DETAILS_MODAL:
-      _showEmoticonDetailsModal();
-      ModalStore.emitChange();
-      break;
-    case ModalConstants.ActionTypes.HIDE_EMOTICON_DETAILS_MODAL:
-      _hideEmoticonDetailsModal();
       ModalStore.emitChange();
       break;
     default:
