@@ -102,4 +102,6 @@ ModalStore.dispatchToken = Dispatcher.register(function(action) {
   }
 });
 
+ModalStore.initSettings();
+
 module.exports = ModalStore;

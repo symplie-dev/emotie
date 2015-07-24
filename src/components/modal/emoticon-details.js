@@ -147,14 +147,14 @@ EmoticonDetails = React.createClass({
               
               <div className={ dangerZoneClasses }>
                 <h1>Danger Zone</h1>
-                  <div className='modal-body'>
-                    <div className='modal-body-row'>
-                      <div className='danger-input-wrapper'>
-                        <input type='text' className='danger-input delete-input' placeholder='Type emoticon name' />
-                      </div>
-                      <button className='danger-btn delete-btn'>delete</button>
+                <div className='modal-body'>
+                  <div className='modal-body-row'>
+                    <div className='danger-input-wrapper'>
+                      <input type='text' className='danger-input delete-input' placeholder='Type emoticon name' />
                     </div>
+                    <button className='danger-btn delete-btn'>delete</button>
                   </div>
+                </div>
               </div>
             </div>
           </div>

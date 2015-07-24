@@ -13,8 +13,6 @@ SettingsModal = React.createClass({
   
   getInitialState: function () {
     return {
-      isVisible:   ModalStore.getIsSettingsModalVisible(),
-      animating:   false,
       settings:    ModalStore.getSettings(),
       tmpSettings: ModalStore.getSettings()
     }
@@ -22,13 +20,12 @@ SettingsModal = React.createClass({
   
   getDefaultProps: function () {
     return {
-      defaultTweet: 'Emotie%2C%20copy%20fun%20emoticon%20faces%20quick%2C%20or%20don%27t%20%C2%AF%5C_(%E3%83%84)_%2F%C2%AF%3A%20https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Femotie%2Fhcfljnkdgalhlifbbgeonfpbejdenloa'
+      defaultTweet: 'Copy%20fun%20emoticon%20faces%20quick%2C%20or%20don%27t%20%C2%AF%5C_(%E3%83%84)_%2F%C2%AF%3A%20https%3A%2F%2Fgoo.gl%2FBvBKJZ%20%23Emotie'
     }
   },
   
   componentDidMount: function () {
     ModalStore.addChangeListener(this.handleModalChange);
-    ModalStore.initSettings();
   },
 
   componentWillUnmount: function () {
@@ -37,11 +34,17 @@ SettingsModal = React.createClass({
   
   handleModalChange: function () {
     this.setState({
-      isVisible:   ModalStore.getIsSettingsModalVisible(),
-      animating:   ModalStore.getIsSettingsModalAnimated(),
       settings:    ModalStore.getSettings(),
       tmpSettings: assign({}, ModalStore.getSettings())
     });
+  },
+  
+  remove: function () {
+    $('.modal-outer').removeClass('fade-in-down').addClass('fade-out-up');
+    
+    setTimeout(function () {
+      React.unmountComponentAtNode(document.getElementById('settingsModalContainer'));
+    }, 400);
   },
   
   handleResultsPerPageChange: function (evt) {
@@ -53,86 +56,88 @@ SettingsModal = React.createClass({
   },
   
   handleCancel: function () {
-    ModalActions.hideSettingsModal();
-    
     this.setState({
       tmpSettings: assign({}, this.state.settings)
     });
+    
+    this.remove();
   },
   
   handleSave: function () {
     ModalActions.setSettings(this.state.tmpSettings);
-    ModalActions.hideSettingsModal();
     PaginaterActions.goToPage(0);
+    this.remove();
   },
   
   handleReset: function () {
     var resetVal = $('.reset-input').val();
     
-    if (resetVal === 'reset') {
+    if (resetVal.toLowerCase() === 'reset') {
       PaginaterActions.resetEmoticons();
       $('.reset-input').val('');
-      ModalActions.hideSettingsModal();
       PaginaterActions.goToPage(0);
+      this.remove();
     } else {
-      $('.settings-modal').removeClass('shake-reset').addClass('shake-reset');
+      $('.modal').addClass('shake');
+      setTimeout(function () {
+        $('.modal').removeClass('shake');
+      }, 1000);
     }
   },
     
-  render: function () {
-    var outerClasses = cx({
-          'modal-outer': true,
-          'show': this.state.isVisible,
-          'hide': !this.state.isVisible,
-          'animating': this.state.animating
-        }),
-        innerClasses = cx({
-          'settings-modal': true,
-          'modal': true,
-          'show': this.state.isVisible,
-          'hide': !this.state.isVisible
-        });
-    
+  render: function () {    
     return (
-      <div className={outerClasses}>
-        <div className='modal-middle'>
-          <div className={innerClasses}>
-            <h1>Settings</h1>
-            <div className='modal-body'>
-              <div className='modal-body-row'>
-                <div className='modal-body-lbl'>Emoticons Per Page</div>
-                <div className='modal-body-val'>
-                  <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
-                    <option value='6'>6</option>
-                    <option value='8'>8</option>
-                    <option value='10'>10</option>
-                    <option value='12'>12</option>
-                  </select>
+      <div className='modal-wrapper'>
+        <div className='modal-outer fade-in-down animated'>
+          <div className='modal-middle'>
+            <div className='emoticon-detail-modal modal animated-long'>
+              <h1>Settings</h1>
+              <div className='modal-body'>
+                <div className='modal-body-row'>
+                  <div className='modal-body-lbl'>Emoticons Per Page</div>
+                  <div className='modal-body-val'>
+                    <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
+                      <option value='6'>6</option>
+                      <option value='8'>8</option>
+                      <option value='10'>10</option>
+                      <option value='12'>12</option>
+                    </select>
+                  </div>
+                </div>
+                <div className='modal-body-row'>
+                  <div className='modal-body-lbl'>Space used</div>
+                  <div className='modal-body-val'>
+                    { this.state.settings.stats.syncBytesInUse + ' / ' + this.state.settings.stats.syncQuota + ' bytes' }
+                  </div>
+                </div>
+                <div className='modal-body-row'>
+                  <div className='modal-body-lbl'>Share ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</div>
+                  <div className='modal-body-val'>
+                    <a className='twitter-share-button' href={'https://twitter.com/intent/tweet?text=' + this.props.defaultTweet}>
+                      <i></i>
+                      <span className='label'>Tweet</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className='modal-body-row'>
-                <div className='modal-body-lbl'>Space used</div>
-                <div className='modal-body-val'>
-                  { this.state.settings.stats.syncBytesInUse + ' / ' + this.state.settings.stats.syncQuota + ' bytes' }
+              
+              <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ this.handleSave } />
+              
+              <div className='danger-zone show'>
+                <h1>Danger Zone</h1>
+                <div className='modal-body'>
+                  <div className='modal-body-row'>
+                    <div className='modal-body-lbl'>
+                      Reset your emoticon library to the default list. This <em>cannot</em> be undone
+                    </div>
+                    <div className='danger-input-wrapper'>
+                      <input type='text' className='danger-input reset-input' placeholder='Type reset' />
+                    </div>
+                    <button className='danger-btn reset-btn' onClick={ this.handleReset }>reset</button>
+                  </div>
                 </div>
-              </div>
-              <div className='modal-body-row'>
-                <div className='modal-body-lbl'>Share ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</div>
-                <div className='modal-body-val'>
-                  <a className='twitter-share-button' href={'https://twitter.com/intent/tweet?text=' + this.props.defaultTweet}>
-                    <i></i>
-                    <span className='label'>Tweet</span>
-                  </a>
-                </div>
-              </div>
-              <div className='modal-body-row ex-padding'>
-                <div className='modal-body-lbl'>Reset emoticons to default emoticon set</div>
-                <div className='warning-lbl'>Warning reset cannot be undone</div>
-                <input type='text' className='warning-input reset-input' placeholder='type reset' />
-                <button className='reset-btn' onClick={ this.handleReset }>reset</button>
               </div>
             </div>
-            <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ this.handleSave } />
           </div>
         </div>
       </div>
@@ -141,3 +146,10 @@ SettingsModal = React.createClass({
 });
 
 module.exports = SettingsModal;
+
+// <div className='modal-body-row ex-padding'>
+//                   <div className='modal-body-lbl'>Reset emoticons to default emoticon set</div>
+//                   <div className='warning-lbl'>Warning reset cannot be undone</div>
+//                   <input type='text' className='warning-input reset-input' placeholder='type reset' />
+//                   <button className='reset-btn' onClick={ this.handleReset }>reset</button>
+//                 </div>
