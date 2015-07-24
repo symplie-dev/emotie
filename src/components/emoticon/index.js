@@ -6,8 +6,15 @@ var React                = require('react'),
 
 Emoticon = React.createClass({
   propTypes: {
+    instructions: React.PropTypes.string,
     name: React.PropTypes.string.isRequired,
     text: React.PropTypes.string.isRequired
+  },
+  
+  getDefaultProps: function () {
+    return {
+      instructions: ' (ctrl+click to edit)'
+    }
   },
   
   handleClick: function (evt) {
@@ -28,7 +35,7 @@ Emoticon = React.createClass({
   render: function () {
     return (
       <div className='emoticon'>
-        <div className='emoticon-inner' title={this.props.name} onClick={this.handleClick}>
+        <div className='emoticon-inner' title={this.props.name + this.props.instructions} onClick={this.handleClick}>
           {this.props.text}
         </div>
       </div>
