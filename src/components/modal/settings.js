@@ -2,7 +2,7 @@ var React            = require('react'),
     cx               = require('classnames'),
     ModalActions     = require('../../actions/modal'),
     PaginaterActions = require('../../actions/paginater'),
-    ModalStore       = require('../../stores/modal'),
+    SettingsStore    = require('../../stores/settings'),
     ModalCtrls       = require('./modal-ctrls'),
     $                = require('jquery'),
     assign           = require('object-assign'),
@@ -13,8 +13,8 @@ SettingsModal = React.createClass({
   
   getInitialState: function () {
     return {
-      settings:    ModalStore.getSettings(),
-      tmpSettings: ModalStore.getSettings()
+      settings:    SettingsStore.getSettings(),
+      tmpSettings:  assign({}, SettingsStore.getSettings())
     }
   },
   
@@ -25,17 +25,17 @@ SettingsModal = React.createClass({
   },
   
   componentDidMount: function () {
-    ModalStore.addChangeListener(this.handleModalChange);
+    SettingsStore.addChangeListener(this.handleModalChange);
   },
 
   componentWillUnmount: function () {
-    ModalStore.removeChangeListener(this.handleModalChange);
+    SettingsStore.removeChangeListener(this.handleModalChange);
   },
   
   handleModalChange: function () {
     this.setState({
-      settings:    ModalStore.getSettings(),
-      tmpSettings: assign({}, ModalStore.getSettings())
+      settings:    SettingsStore.getSettings(),
+      tmpSettings: assign({}, SettingsStore.getSettings())
     });
   },
   

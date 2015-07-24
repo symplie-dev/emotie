@@ -6,45 +6,11 @@ var assign                     = require('object-assign'),
     ModalConstants             = require('../constants/modal'),
     Dao                        = require('../database'),
     _settings                  = { stats: {}, resultsPerPage: 6 },
-    _isSettingsModalVisible    = false,
-    _isSettingsModalAnimated   = false,
-    _isEmoticonDetailsVisible  = false,
-    _isEmoticonDetailsAnimated = false,
-    ModalStore;
-
-function _showSettingsModal() {
-  _isSettingsModalVisible = true;
-  _isSettingsModalAnimated = true;
-  
-  setTimeout(function () {
-    _isSettingsModalAnimated = false;
-    ModalStore.emitChange();
-  }, 400);
-}
-
-function _hideSettingsModal() {
-  _isSettingsModalVisible = false;
-  _isSettingsModalAnimated = true;
-  
-  setTimeout(function () {
-    _isSettingsModalAnimated = false;
-    ModalStore.emitChange();
-  }, 400);
-}
+    SettingsStore;
 
 function _setSettings(settings) {
   _settings = settings;
   Dao.setSettings(settings);
-}
-
-function _hideEmoticonDetailsModal() {
-  _isEmoticonDetailsVisible = false;
-  _isEmoticonDetailsAnimated = true;
-  
-  setTimeout(function () {
-    _isEmoticonDetailsAnimated = false;
-    ModalStore.emitChange();
-  }, 400);
 }
 
 function _setStats(settings) {
@@ -53,11 +19,11 @@ function _setStats(settings) {
    Dao.getSyncBytesInUse().then(function (bytes) {
     _settings.stats.syncBytesInUse = bytes;
     _settings.stats.syncQuota = Dao.getSyncQuota();
-    ModalStore.emitChange();
+    SettingsStore.emitChange();
   });
 }
 
-ModalStore = assign({}, EventEmitter.prototype, {
+SettingsStore = assign({}, EventEmitter.prototype, {
   emitChange: function () {
     this.emit('change');
   },
@@ -90,11 +56,11 @@ ModalStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-ModalStore.dispatchToken = Dispatcher.register(function(action) {
+SettingsStore.dispatchToken = Dispatcher.register(function(action) {
   switch(action.type) {
     case ModalConstants.ActionTypes.SET_SETTINGS:
       _setSettings(action.settings);
-      ModalStore.emitChange();
+      SettingsStore.emitChange();
       break;
     default:
       // no-op
@@ -102,6 +68,6 @@ ModalStore.dispatchToken = Dispatcher.register(function(action) {
   }
 });
 
-ModalStore.initSettings();
+SettingsStore.initSettings();
 
-module.exports = ModalStore;
+module.exports = SettingsStore;

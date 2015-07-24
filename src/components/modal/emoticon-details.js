@@ -3,7 +3,7 @@ var React = require('react'),
     $     = require('jquery'),
     Dao              = require('../../database'),
     ModalActions     = require('../../actions/modal'),
-    ModalStore       = require('../../stores/modal'),
+    SettingsStore    = require('../../stores/settings'),
     PaginaterActions = require('../../actions/paginater'),
     ModalCtrls       = require('./modal-ctrls'),
     ToastActions     = require('../../actions/toast'),
@@ -37,17 +37,17 @@ EmoticonDetails = React.createClass({
   },
   
   componentDidMount: function () {
-    ModalStore.addChangeListener(this.handleModalChange);
+    SettingsStore.addChangeListener(this.handleModalChange);
   },
 
   componentWillUnmount: function () {
-    ModalStore.removeChangeListener(this.handleModalChange);
+    SettingsStore.removeChangeListener(this.handleModalChange);
   },
   
   handleModalChange: function () {
     this.setState({
-      isVisible: ModalStore.getIsEmoticonDetailsVisible(),
-      animating: ModalStore.getIsEmoticonDetailsAnimated()
+      isVisible: SettingsStore.getIsEmoticonDetailsVisible(),
+      animating: SettingsStore.getIsEmoticonDetailsAnimated()
     });
   },
   
