@@ -126,7 +126,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.625"
-     inkscape:cx="64.183985"
+     inkscape:cx="-0.76839595"
      inkscape:cy="66.639747"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -160,7 +160,8 @@
        width="128"
        height="128"
        x="-2.1798271e-006"
-       y="924.36212" />
+       y="924.36212"
+       ry="13.714283" />
     <circle
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter4269)"
        id="path4146"
