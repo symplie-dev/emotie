@@ -3,7 +3,7 @@
 var ModalConstants = {
 
   ActionTypes: {
-    SET_SETTINGS:                'SET_SETTINGS'
+    SET_SETTINGS: 'SET_SETTINGS'
   }
 
 };

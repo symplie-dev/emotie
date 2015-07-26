@@ -8,8 +8,8 @@ ModalCtrls = React.createClass({
     rightBtnTxt:         React.PropTypes.string,
     leftBtnIsVisible:    React.PropTypes.bool,
     rightBtnIsVisible:   React.PropTypes.bool,
-    handleClickLeftBtn:  React.PropTypes.function,
-    handleClickRightBtn: React.PropTypes.function
+    handleClickLeftBtn:  React.PropTypes.func,
+    handleClickRightBtn: React.PropTypes.func
   },
   
   getDefaultProps: function () {
@@ -18,8 +18,6 @@ ModalCtrls = React.createClass({
       rightBtnTxt:         'save',
       leftBtnIsVisible:    true,
       rightBtnIsVisible:   true,
-      handleClickLeftBtn:  function () { /* no-op */ },
-      handleClickRightBtn: function () { /* no-op */ }
     }
   },
   
