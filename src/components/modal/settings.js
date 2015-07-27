@@ -47,6 +47,14 @@ SettingsModal = React.createClass({
     }, 400);
   },
   
+  handleShortcutsChange: function (evt) {
+    var currSettings = this.state.tmpSettings;
+    
+    currSettings.shortcuts = evt.target.checked;
+    
+    this.setState({ tmpSettings: currSettings });
+  },
+  
   handleResultsPerPageChange: function (evt) {
     var currSettings = this.state.tmpSettings;
     
@@ -93,6 +101,16 @@ SettingsModal = React.createClass({
             <div className='emoticon-detail-modal modal animated-long'>
               <h1>Settings</h1>
               <div className='modal-body'>
+                <div className='modal-body-row'>
+                  <div className='modal-body-inner-row'>
+                    <div className='modal-body-lbl'>Enable shortcuts</div>
+                    <div className='modal-body-val'><input type='checkbox' checked={ this.state.tmpSettings.shortcuts }
+                      onChange={ this.handleShortcutsChange }/></div>
+                  </div>
+                  <div className='modal-body-desc'>
+                    { 'Typing {<emoticon name>} in any input will be replaced by the emoticon; i.e. {bear} will become ʕ•ᴥ•ʔ. Change takes effect after re-opening tabs.' }
+                  </div>
+                </div>
                 <div className='modal-body-row'>
                   <div className='modal-body-lbl'>Emoticons Per Page</div>
                   <div className='modal-body-val'>
