@@ -52,7 +52,8 @@ EmotieDao = {
   
   defaultSettings: {
     sort: 'SORT_NAME',
-    resultsPerPage: 8
+    resultsPerPage: 8,
+    shortcuts: true
   },
   
   /**
@@ -140,7 +141,7 @@ EmotieDao = {
     
     chrome.storage.sync.get('emoticons', function (data) {
       var filtered = data.emoticons.filter(function (emoticon) {
-            return emoticon.name === name;
+            return emoticon.name.toLowerCase() === name.toLowerCase();
           });
       
       deferred.resolve(filtered[0]);
@@ -176,10 +177,6 @@ EmotieDao = {
     chrome.storage.sync.get('emoticons', function (data) {
       var unique,
           emoticons = data.emoticons || [];
-      
-      // unique = data.emoticons.filter(function (emoticon) {
-      //   return emoticon.name.toLowerCase() === newEmoticon.name.toLowerCase();
-      // }).length === 0;
       
       unique = self.isEmoticonUnique(newEmoticon.name, emoticons);
       
