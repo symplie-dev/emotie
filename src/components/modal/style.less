@@ -25,16 +25,21 @@
       width: 100%;
       
       .modal {
-        background: #fff;
-        border-radius: 4px;
         color: #111;
         display: inline-block;
         font-size: 18px;
         height: auto;
-        overflow: auto;
         position: relative;
-        // width: 280px;
         width: 100%;
+        
+        .modal-inner {
+          background: #fff;
+          border-radius: 4px;
+        
+          &:last-child {
+            margin-top: 20px;
+          }
+        }
         
         h1 {
           border-bottom: 1px solid #ddd;
@@ -65,6 +70,16 @@
               font-size: 0;
               height: 0;
               visibility: hidden;
+            }
+            
+            .modal-body-desc {
+              color: @gray2;
+              font-size: 12px;
+              padding-bottom: 5px;
+              
+              em {
+                font-weight: bold;
+              }
             }
             
             .danger-msg {
@@ -141,11 +156,15 @@
         
         /* Warning Section */
         .danger-zone {
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
           display: none;
           width: 100%;
           
           h1 {
             background: @red;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
             border-bottom: 1px solid #ddd;
             color: #fff;
             font-family: Helvetica, Arial, sans-serif;

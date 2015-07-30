@@ -91,49 +91,53 @@ SettingsModal = React.createClass({
         <div className='modal-outer fade-in-down animated'>
           <div className='modal-middle'>
             <div className='emoticon-detail-modal modal animated-long'>
-              <h1>Settings</h1>
-              <div className='modal-body'>
-                <div className='modal-body-row'>
-                  <div className='modal-body-lbl'>Emoticons Per Page</div>
-                  <div className='modal-body-val'>
-                    <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
-                      <option value='6'>6</option>
-                      <option value='8'>8</option>
-                      <option value='10'>10</option>
-                      <option value='12'>12</option>
-                    </select>
-                  </div>
-                </div>
-                <div className='modal-body-row'>
-                  <div className='modal-body-lbl'>Space used</div>
-                  <div className='modal-body-val'>
-                    { this.state.settings.stats.syncBytesInUse + ' / ' + this.state.settings.stats.syncQuota + ' bytes' }
-                  </div>
-                </div>
-                <div className='modal-body-row'>
-                  <div className='modal-body-lbl'>Share ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</div>
-                  <div className='modal-body-val'>
-                    <a className='twitter-share-button' href={'https://twitter.com/intent/tweet?text=' + this.props.defaultTweet}>
-                      <i></i>
-                      <span className='label'>Tweet</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ this.handleSave } />
-              
-              <div className='danger-zone show'>
-                <h1>Danger Zone</h1>
+              <div className='modal-inner'>
+                <h1>Settings</h1>
                 <div className='modal-body'>
                   <div className='modal-body-row'>
-                    <div className='modal-body-lbl'>
-                      Reset your emoticon library to the default list. This <em>cannot</em> be undone
+                    <div className='modal-body-lbl'>Emoticons Per Page</div>
+                    <div className='modal-body-val'>
+                      <select value={ this.state.tmpSettings.resultsPerPage } onChange={ this.handleResultsPerPageChange }>
+                        <option value='6'>6</option>
+                        <option value='8'>8</option>
+                        <option value='10'>10</option>
+                        <option value='12'>12</option>
+                      </select>
                     </div>
-                    <div className='danger-input-wrapper'>
-                      <input type='text' className='danger-input reset-input' placeholder='Type reset' />
+                  </div>
+                  <div className='modal-body-row'>
+                    <div className='modal-body-lbl'>Space used</div>
+                    <div className='modal-body-val'>
+                      { this.state.settings.stats.syncBytesInUse + ' / ' + this.state.settings.stats.syncQuota + ' bytes' }
                     </div>
-                    <button className='danger-btn reset-btn' onClick={ this.handleReset }>reset</button>
+                  </div>
+                  <div className='modal-body-row'>
+                    <div className='modal-body-lbl'>Share ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</div>
+                    <div className='modal-body-val'>
+                      <a className='twitter-share-button' href={'https://twitter.com/intent/tweet?text=' + this.props.defaultTweet}>
+                        <i></i>
+                        <span className='label'>Tweet</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ this.handleSave } />
+              </div>
+              
+              <div className='modal-inner'>
+                <div className='danger-zone show'>
+                  <h1>Danger Zone</h1>
+                  <div className='modal-body'>
+                    <div className='modal-body-row'>
+                      <div className='modal-body-desc'>
+                        Reset your emoticon library to the default list. This <em>cannot</em> be undone.
+                      </div>
+                      <div className='danger-input-wrapper'>
+                        <input type='text' className='danger-input reset-input' placeholder='Type reset' />
+                      </div>
+                      <button className='danger-btn reset-btn' onClick={ this.handleReset }>reset</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,10 +150,3 @@ SettingsModal = React.createClass({
 });
 
 module.exports = SettingsModal;
-
-// <div className='modal-body-row ex-padding'>
-//                   <div className='modal-body-lbl'>Reset emoticons to default emoticon set</div>
-//                   <div className='warning-lbl'>Warning reset cannot be undone</div>
-//                   <input type='text' className='warning-input reset-input' placeholder='type reset' />
-//                   <button className='reset-btn' onClick={ this.handleReset }>reset</button>
-//                 </div>
