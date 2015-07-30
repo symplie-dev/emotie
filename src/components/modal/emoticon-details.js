@@ -161,30 +161,37 @@ EmoticonDetails = React.createClass({
           <div className='modal-middle'>
             <div className='emoticon-detail-modal modal animated-long'>
               
-              <h1>{ this.props.title }</h1>
-              
-              <div className='modal-body'>
-                <div className='modal-body-row'>
-                  <div className={dangerMsgClasses}>Emoticon name must be unique</div>
-                  <input type='text' className='emoticon-details-input' value={ this.state.name }
-                    onChange={ this.handleNameChange } placeholder='Emoticon Name' />
-                </div>
-                <div className='modal-body-row'>
-                  <input type='text' className='emoticon-details-input' value={ this.state.emoticonText }
-                    onChange={ this.handleEmoticonTextChange } placeholder='Emoticon Text' />
-                </div>
-              </div>
-              
-              <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ handleSave } />
-              
-              <div className={ dangerZoneClasses }>
-                <h1>Danger Zone</h1>
+              <div className='modal-inner'>
+                <h1>{ this.props.title }</h1>
+                
                 <div className='modal-body'>
                   <div className='modal-body-row'>
-                    <div className='danger-input-wrapper'>
-                      <input type='text' className='danger-input delete-input' placeholder='Type emoticon name' />
+                    <div className={dangerMsgClasses}>Emoticon name must be unique</div>
+                    <input type='text' className='emoticon-details-input' value={ this.state.name }
+                      onChange={ this.handleNameChange } placeholder='Emoticon Name' />
+                  </div>
+                  <div className='modal-body-row'>
+                    <input type='text' className='emoticon-details-input' value={ this.state.emoticonText }
+                      onChange={ this.handleEmoticonTextChange } placeholder='Emoticon Text' />
+                  </div>
+                </div>
+                
+                <ModalCtrls handleClickLeftBtn={ this.handleCancel } handleClickRightBtn={ handleSave } />
+              </div>
+              
+              <div className='modal-inner'>
+                <div className={ dangerZoneClasses }>
+                  <h1>Danger Zone</h1>
+                  <div className='modal-body'>
+                    <div className='modal-body-row'>
+                      <div className='modal-body-desc'>
+                        Delete the emoticon. This <em>cannot</em> be undone.
+                      </div>
+                      <div className='danger-input-wrapper'>
+                        <input type='text' className='danger-input delete-input' placeholder='Type emoticon name' />
+                      </div>
+                      <button className='danger-btn delete-btn' onClick={ this.handleDelete }>delete</button>
                     </div>
-                    <button className='danger-btn delete-btn' onClick={ this.handleDelete }>delete</button>
                   </div>
                 </div>
               </div>
