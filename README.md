@@ -14,6 +14,11 @@ Available in the Chrome Web Store for free: [Emotie](https://chrome.google.com/w
     ```bash
     npm install
     ```
+3. If you are OS X run the following command (or add it to your `.bash_profile`) to prevent gulp errors
+    ```bash
+    ulimit -n 2560
+    ```
+    - see [Issue 431](https://github.com/substack/node-browserify/issues/431)
 3. Compile LESS
     ```bash
     gulp less
