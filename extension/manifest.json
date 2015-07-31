@@ -9,13 +9,6 @@
     "default_icon":"img/icon128.png",
     "default_popup": "pop-up.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["dist/background.min.js"],
-      "all_frames": true
-    }
-  ],
   "icons": {
     "128": "img/icon128.png"
   },

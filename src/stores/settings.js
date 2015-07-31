@@ -5,7 +5,7 @@ var assign                     = require('object-assign'),
     Dispatcher                 = require('../dispatcher'),
     ModalConstants             = require('../constants/modal'),
     Dao                        = require('../database'),
-    _settings                  = { stats: {}, resultsPerPage: 6, shortcuts: false },
+    _settings                  = { stats: {}, resultsPerPage: 6 },
     SettingsStore;
 
 function _setSettings(settings) {

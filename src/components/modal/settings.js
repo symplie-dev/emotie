@@ -47,14 +47,6 @@ SettingsModal = React.createClass({
     }, 400);
   },
   
-  handleShortcutsChange: function (evt) {
-    var currSettings = this.state.tmpSettings;
-    
-    currSettings.shortcuts = evt.target.checked;
-    
-    this.setState({ tmpSettings: currSettings });
-  },
-  
   handleResultsPerPageChange: function (evt) {
     var currSettings = this.state.tmpSettings;
     
