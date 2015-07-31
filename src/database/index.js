@@ -76,7 +76,8 @@ EmotieDao = {
     { name: 'Polar bear', text: 'ʕ•͡ᴥ•ʔ' },
     { name: 'Praying', text: '(╯˘ -˘ )╯' },
     { name: 'Put Em Up', text: 'Q('.'Q)' },
-    { name: 'Sleeping', text: '(–˛ — º)' }
+    { name: 'Sleeping', text: '(–˛ — º)' },
+    { name: 'Puts Glasses On', text: '(•_•) ( •_•)>⌐□-□ (⌐□_□)' }
   ],
   
   defaultSettings: {
