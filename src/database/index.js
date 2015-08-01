@@ -75,14 +75,20 @@ EmotieDao = {
     { name: 'Ping Pong table', text: '┳┻┳°' },
     { name: 'Polar bear', text: 'ʕ•͡ᴥ•ʔ' },
     { name: 'Praying', text: '(╯˘ -˘ )╯' },
-    { name: 'Put Em Up', text: 'Q('.'Q)' },
+    { name: 'Put Em Up', text: 'Q(\'.\'Q)' },
     { name: 'Sleeping', text: '(–˛ — º)' },
-    { name: 'Puts Glasses On', text: '(•_•) ( •_•)>⌐□-□ (⌐□_□)' }
+    { name: 'Puts Glasses On', text: '(•_•) ( •_•)>⌐□-□ (⌐□_□)' },
+    { name: 'Peeping Lenny', text: '┬┴┬┴┤(° ͜ʖ├┬┴┬┴' },
+    { name: 'Clueless', text: '[no clue] ╠█═══════╣ [gets it]'},
+    { name: 'Zombie', text: '[¬º-°]¬'},
+    { name: 'Dollar', text: '[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]'},
+    { name: 'Beer', text: '🍺'},
+    { name: 'Poop', text: '💩'}
   ],
   
   defaultSettings: {
     sort: 'SORT_NAME',
-    resultsPerPage: 8
+    resultsPerPage: 10
   },
   
   /**
